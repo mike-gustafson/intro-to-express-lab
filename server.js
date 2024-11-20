@@ -14,7 +14,7 @@ app.get('/greetings/:name', (req, res) => {
     res.send(`Hello, ${req.params.name}!`);
 });
 
-// GET /roll/<number-parameter>
+// GET /roll/<num>
 app.get('/roll/:num', (req, res) => {
     const num = req.params.num;
     const roll = Math.floor(Math.random() * num) + 1;
@@ -61,7 +61,6 @@ app.get('/shoes', (req, res) => {
     }
     res.send(`You'r shoes are ${filteredShoes.map(shoe => shoe.name).join(', ')}`);  
 })
-
 
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
